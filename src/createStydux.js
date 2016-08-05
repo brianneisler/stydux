@@ -2,10 +2,10 @@ import _ from 'mudash'
 
 export default function createStydux(options) {
 
-  let currentSelector = _.isFunction(options) ? options : (currentState) => {
-    const selectPath = _.get(options, 'name', 'styles');
-    return _.get(currentState, selectPath);
-  };
+  const currentSelector = _.isFunction(options) ? options : (currentState) => {
+    const selectPath = _.get(options, 'name', 'styles')
+    return _.get(currentState, selectPath)
+  }
   let currentStyles = null
   let currentListeners = []
   let nextListeners = currentListeners
